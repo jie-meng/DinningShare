@@ -1,10 +1,14 @@
 import React from 'react';
 import styles from './HostPage.scss'
+import Card from './Card/Card'
 
 class HostPage extends React.Component {
     render(){
       return (
-          <h2>HostPage</h2>
+        <div>
+            <h2>HostPage</h2>
+            <Card />
+        </div>
       )
     }
 }
