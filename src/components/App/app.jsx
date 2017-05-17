@@ -1,13 +1,17 @@
 import React from 'react';
+import HostPage from '../pages/HostPage';
 import classNames from 'classnames/bind';
-import styles from './app.scss'
+import styles from './App.scss'
 
 const cx = classNames.bind(styles);
 
 class App extends React.Component {
     render(){
       return (
-          <h2>Hello!</h2>
+          <div>
+            <h2>Hello!</h2>
+            <HostPage />
+        </div>
       )
     }
 }
