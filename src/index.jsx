@@ -1,5 +1,15 @@
 import React from 'react';
+import { Router, Route, IndexRoute, Redirect, hashHistory } from 'react-router';
 import { render } from 'react-dom';
-import App from './components/App/App';
+import App from './components/App';
+import Home from './components/Pages/Home';
+import Guest from './components/Pages/Guest';
 
-render(<App />, document.getElementById('app'));
+render((
+  <Router history={hashHistory}>
+    <Route path="/" component={App}>
+        <IndexRoute name="home" component={Home}/>
+    </Route>
+    <Route path="/guest" name="guest" component={Guest}/>
+  </Router>
+), document.getElementById('app'));
