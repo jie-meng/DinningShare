@@ -90,6 +90,7 @@ proguard/
 *.iws
 .idea/
 
+www/
 .DS_Store
 coverage/
 platforms/android/res/xml/config.xml
