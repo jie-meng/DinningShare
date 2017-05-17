@@ -1,5 +1,5 @@
 import React from 'react';
-import HostPage from '../pages/HostPage';
+import HostPage from '../Pages/HostPage/HostPage';
 import classNames from 'classnames/bind';
 import styles from './App.scss'
 
