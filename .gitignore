@@ -93,6 +93,19 @@ proguard/
 www/
 .DS_Store
 coverage/
+
+# android
 platforms/android/res/xml/config.xml
 platforms/android/debug-signing.properties
 platforms/android/release-signing.properties
+platforms/android/assets/www
+platforms/android/bin
+platforms/android/gen
+platforms/android/local.properties
+platforms/android/ant-build
+platforms/android/ant-gen
+platforms/android/CordovaLib/ant-build
+platforms/android/CordovaLib/ant-gen
+platforms/android/CordovaLib/bin
+platforms/android/CordovaLib/gen
+platforms/android/CordovaLib/local.properties
