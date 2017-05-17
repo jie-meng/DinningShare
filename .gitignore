@@ -95,7 +95,6 @@ www/
 coverage/
 
 # android
-platforms/android/res/xml/config.xml
 platforms/android/debug-signing.properties
 platforms/android/release-signing.properties
 platforms/android/assets/www
