@@ -1,0 +1,6 @@
+{
+    "name": "your name",
+    "gender": "male", //"male", "female"
+    "age": 33,
+    "tel": "13912343456"
+}
