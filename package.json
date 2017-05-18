@@ -5,8 +5,10 @@
     "description": "A sample Apache Cordova application that responds to the deviceready event.",
     "main": "index.js",
     "scripts": {
-        "start": "webpack && webpack-dev-server --inline --hot --port 8088",
-        "build": "webpack && rm -rf platforms/android/assets && cordova run android"
+        "start": "yarn run clean && yarn run copy && webpack && webpack-dev-server --inline --hot --port 8088",
+        "build": "webpack && rm -rf platforms/android/assets && cordova run android",
+        "clean": "rm -rf www/images",
+        "copy": "cp -R src/images www/"
     },
     "author": "Apache Cordova Team",
     "license": "Apache-2.0",
