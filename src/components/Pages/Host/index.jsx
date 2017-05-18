@@ -101,7 +101,6 @@ class Host extends React.Component {
             moment(this.state.time).format('HH:mm')
         )
         DataStorage.addActivity(activity)
-        console.log(DataStorage.getActivities())
         hashHistory.push('/')
     }
 
@@ -221,7 +220,7 @@ class Host extends React.Component {
                         label="Submit"
                         backgroundColor={amber700}
                         labelColor={white}
-                        onTouchTap={this.handleSubmit}
+                        onClick={this.handleSubmit}
                         style={materialStyles.submitButton}/>
                 </div>
             </div>
