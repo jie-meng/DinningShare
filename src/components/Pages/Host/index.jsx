@@ -124,23 +124,24 @@ class Host extends React.Component {
     }
 
     render() {
-        const actions = [
+        const alertModal = [
             <FlatButton
                 label="Okay"
                 primary={true}
                 onTouchTap={this.closeAlert}
+                labelStyle={{color: amber700}}
             />
         ];
 
         return (
             <div className={style('container')}>
                 <Dialog
-                    actions={actions}
+                    actions={alertModal}
                     modal={false}
                     open={this.state.alert}
                     onRequestClose={this.closeAlert}
                 >
-                    Ouch! Seems like you miss something.
+                    Ouch! Seems like you missed something.
                 </Dialog>
                 <div className={style('fields')}>
                     <TextField
