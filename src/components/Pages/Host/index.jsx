@@ -14,6 +14,8 @@ import RaisedButton from "material-ui/RaisedButton"
 import { RadioButton, RadioButtonGroup } from 'material-ui/RadioButton';
 import ActionFavorite from 'material-ui/svg-icons/action/favorite';
 import ActionFavoriteBorder from 'material-ui/svg-icons/action/favorite-border';
+import Dialog from 'material-ui/Dialog';
+import FlatButton from 'material-ui/FlatButton';
 import {amber700, red500, white} from "material-ui/styles/colors"
 import injectTapEventPlugin from "react-tap-event-plugin"
 injectTapEventPlugin();
@@ -51,6 +53,8 @@ class Host extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
+            alert: false,
+            canSubmit: false,
             guests: null,
             title: '',
             costs: '',
@@ -60,7 +64,7 @@ class Host extends React.Component {
             time: null,
             name: '',
             tel: '',
-            gender: ''
+            gender: '',
         }
     }
 
@@ -83,6 +87,7 @@ class Host extends React.Component {
 
     handleSubmit = () => {
         if(!this.validateData()){
+            this.setState({alert: true})
             return false
         }
         const host = modalGenerator.generateMember(
@@ -106,12 +111,37 @@ class Host extends React.Component {
     }
 
     validateData = () => {
+        for(let key in this.state){
+            if(!this.state[key] && key !== 'alert' && key !== 'canSubmit'){
+                return false
+            }
+        }
         return true
     }
 
+    closeAlert = () => {
+        this.setState({alert: false});
+    }
+
     render() {
+        const actions = [
+            <FlatButton
+                label="Okay"
+                primary={true}
+                onTouchTap={this.closeAlert}
+            />
+        ];
+
         return (
             <div className={style('container')}>
+                <Dialog
+                    actions={actions}
+                    modal={false}
+                    open={this.state.alert}
+                    onRequestClose={this.closeAlert}
+                >
+                    Ouch! Seems like you miss something.
+                </Dialog>
                 <div className={style('fields')}>
                     <TextField
                         hintText="Give this activity a good name"
@@ -188,7 +218,6 @@ class Host extends React.Component {
                     />
                     <RadioButtonGroup
                         name="gender"
-                        defaultSelected="not_light"
                         onChange={this.handleChange}
                     >
                         <RadioButton
@@ -222,7 +251,8 @@ class Host extends React.Component {
                         backgroundColor={amber700}
                         labelColor={white}
                         onClick={this.handleSubmit}
-                        style={materialStyles.submitButton}/>
+                        style={materialStyles.submitButton}
+                        disabled={this.state.canSubmit}/>
                 </div>
             </div>
         )
