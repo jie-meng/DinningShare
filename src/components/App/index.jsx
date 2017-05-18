@@ -19,7 +19,7 @@ class App extends React.Component {
                     <AppBar title="Share Dining Table"
                             iconClassNameRight="muidocs-icon-navigation-expand-more" style={{backgroundColor: '#FFA000'}}/>
                     {this.props.children}
-                    <FloatingActionButton style={{marginRight: '20px'}} onClick={() => {hashHistory.push({pathname: '/host'}) }}>
+                    <FloatingActionButton style={{position: 'fixed', bottom: '8px', right: '8px'}} iconStyle={{backgroundColor: '#FFA000'}} onClick={() => {hashHistory.push({pathname: '/host'}) }}>
                         <ContentAdd />
                     </FloatingActionButton>
                 </div>
