@@ -13,7 +13,6 @@ class Home extends React.Component {
         for (var i = 0; i < activities.length; i++) {
             cardItems.push(<CardItem activity={activities[i]}> </CardItem>);
         }
-        const activity = Storage.getActivities()[0];
 
         return (
             <div>

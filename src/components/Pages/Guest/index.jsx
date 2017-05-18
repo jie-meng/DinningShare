@@ -5,7 +5,7 @@ import GuestForm from './GuestForm';
 
 class Guest extends React.Component {
     render(){
-      let guests = [];
+      let guests = [{},{}];
       return (
         <div>
           <DinningTable guests={ guests } limitation={ 5 }/>

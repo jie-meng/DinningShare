@@ -4,7 +4,7 @@ import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'mat
 class CardItem extends React.Component {
     render() {
         const { title, description,images,host } = this.props.activity;
-
+        
         return (
             <Card style={{boxShadow: '0 2px 4px rgba(0,0,0,.15)', width: '48%', display:'inline-block', margin: '3px'}}>
                 <CardMedia overlay={<CardTitle title="My Kitchen" style={{padding: '0px',}} titleStyle={{fontSize: '18px',paddingLeft: '10px'}}/>}>
