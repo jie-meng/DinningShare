@@ -1,6 +1,7 @@
 import React from 'react';
 import DinningTable from '../../DinningTable'
 import Storage from '../../../utils/Storage';
+import { Link,hashHistory } from 'react-router'
 
 import GuestForm from './GuestForm';
 import classNames from 'classnames/bind';
@@ -13,8 +14,9 @@ class Guest extends React.Component {
   }
 
   render(){
-    // const title = this.props.title;
-    const title = 'Great Dinner';
+    console.log(this.props);
+    const title = this.props.location.query.title;
+    // const title = 'Great Dinner';
     const activities = Storage.getActivities();
     let activity = activities.filter((activity) => {
       return activity.title === title;
@@ -46,10 +48,11 @@ class Guest extends React.Component {
   addMember = (member) => {
     const activities = Storage.getActivities();
     let index = activities.findIndex((activity) => {
-      return activity.title === 'Great Dinner';
+      return activity.title === this.props.location.query.title;
     });
     activities[index].guests.push(member);
     Storage.saveActivities();
+    hashHistory.push({pathname: '/'});
   }
 }
 

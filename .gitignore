@@ -93,7 +93,7 @@ proguard/
 www/
 .DS_Store
 coverage/
-images/
+/images/
 
 # android
 platforms/android/debug-signing.properties
