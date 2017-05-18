@@ -8,7 +8,7 @@ class CardItem extends React.Component {
         
         return (
             <Card style={{boxShadow: '0 2px 4px rgba(0,0,0,.15)', width: '48%', display:'inline-block', margin: '3px'}}
-                  onClick={() => {hashHistory.push({pathName: '/guest',query: {title}}) }}>
+                  onClick={() => {hashHistory.push({pathname: '/guest',query: {title}}) }}>
                 <CardMedia
                     overlay={<CardTitle title="My Kitchen" style={{padding: '0px',}} titleStyle={{fontSize: '18px',paddingLeft: '10px'}}/>}>
                     <img src={images[0]} style={{height: '210px',}}/>
