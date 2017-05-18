@@ -26,7 +26,7 @@ class DinningTable extends React.Component {
   }
 
   componentDidUpdate() {
-    document.getElementsByTagName('svg')[0].remove();
+    document.getElementById('table').remove();
     this.drawCirle();
   }
 
@@ -60,16 +60,16 @@ class DinningTable extends React.Component {
   }
 
   drawCirle = () => {
-    const x = 250, y = 250, radius = 150;
+    const x = 225, y = 225, radius = 150;
     const gap = 40;
     const ratio = 2 * Math.PI / seats_amount;
     let svg = Snap();
-    svg.attr('height', '500px');
+    svg.attr('height', '500px').attr('width', '450px').attr('id', 'table');
     let div_element = document.getElementById('dinning-table');
     svg.appendTo(div_element)
     let circle = svg.circle(x, y, radius);
     circle.attr('fill', '#FFE082');
-    svg.image('www/images/food.png', 150, 150, 200, 200).attr('preserveAspectRatio', 'xMidYMin meet');
+    svg.image('www/images/food.png', x-100, y-100, 200, 200).attr('preserveAspectRatio', 'xMidYMin meet');
     
     let seats = this.state.seats;
     seats.forEach((seat, index) => {

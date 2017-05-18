@@ -3,6 +3,11 @@ import styles from './Guest.scss'
 import DinningTable from '../../DinningTable'
 
 class Guest extends React.Component {
+
+  constructor(props) {
+    super(props);
+  }
+
     render(){
       let guests = [];
       return (
