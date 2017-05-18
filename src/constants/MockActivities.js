@@ -16,8 +16,7 @@ const member5 = ModelGenerator.generateMember("Tom", "male", 13937653812);
 const member6 = ModelGenerator.generateMember("Jim", "male", 13937653812);
 const member7 = ModelGenerator.generateMember("God", "male", 13937653812);
 
-//locations
-const location0 = ModelGenerator.generateLocation("Shaanxi", "Xi'an", "Tian gu eight street", "Huanpu", "E606");
+const location0 = "Shaanxi Xi'an Tian gu eight street Huanpu E606";
 
 export default [
     ModelGenerator.generateActivity("Great Dinner", host0, "Come and eat!", ["images/kitchen/kitchen0.png"], 8, location0, new Date(2017, 5, 18, 12, 0), '',[member0, member1, member2, member3]),
