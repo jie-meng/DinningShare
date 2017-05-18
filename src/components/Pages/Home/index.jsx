@@ -1,7 +1,9 @@
 import React from 'react';
 import styles from './Home.scss'
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
-import FlatButton from 'material-ui/FlatButton';
+import { hashHistory } from 'react-router'
+import FloatingActionButton from 'material-ui/FloatingActionButton';
+import ContentAdd from 'material-ui/svg-icons/content/add';
 import Storage from '../../../utils/Storage';
 import CardItem from './CardItem';
 
@@ -17,6 +19,9 @@ class Home extends React.Component {
         return (
             <div>
                 {cardItems}
+                <FloatingActionButton style={{position: 'fixed', bottom: '8px', right: '8px'}} iconStyle={{backgroundColor: '#FFA000'}} onClick={() => {hashHistory.push({pathname: '/host'}) }}>
+                    <ContentAdd />
+                </FloatingActionButton>
             </div>
         )
     }
