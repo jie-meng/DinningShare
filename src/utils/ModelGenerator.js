@@ -1,9 +1,8 @@
 export default {
-    generateMember: (name, gender, age, tel, avatar) => {
+    generateMember: (name, gender, tel, avatar) => {
         return {
             "name": name,
             "gender": gender,
-            "age": age,
             "tel": tel,
             "avatar": avatar
         }
