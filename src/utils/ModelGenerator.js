@@ -8,16 +8,6 @@ export default {
         }
     },
 
-    generateLocation: (province, city, street, house, room) => {
-        return {
-            "province": province,
-            "city": city,
-            "street": street,
-            "house": house,
-            "room": room
-        }
-    },
-
     generateActivity: (title, host, description, images, limitation, location, time, guests) => {
         return {
             "title": title,
