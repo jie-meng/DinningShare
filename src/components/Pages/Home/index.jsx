@@ -11,7 +11,7 @@ class Home extends React.Component {
         const activities = Storage.getActivities();
 
         for (var i = 0; i < activities.length; i++) {
-            cardItems.push(<CardItem cardTitle={activities[i].title}> </CardItem>);
+            cardItems.push(<CardItem activity={activities[i]}> </CardItem>);
         }
         const activity = Storage.getActivities()[0];
 

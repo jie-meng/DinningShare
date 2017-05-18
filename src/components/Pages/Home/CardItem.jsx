@@ -3,18 +3,18 @@ import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'mat
 
 class CardItem extends React.Component {
     render() {
-        const { cardTitle } = this.props;
+        const { title, description,images,host } = this.props.activity;
 
         return (
             <Card style={{boxShadow: '0 2px 4px rgba(0,0,0,.15)', width: '48%', display:'inline-block', margin: '3px'}}>
                 <CardMedia overlay={<CardTitle title="My Kitchen" style={{padding: '0px',}} titleStyle={{fontSize: '18px',paddingLeft: '10px'}}/>}>
-                    <img src="images/kitchen/kitchen0.jpg" style={{height: '210px',}}/>
+                    <img src={images[0]} style={{height: '210px',}}/>
                 </CardMedia>
-                <CardHeader avatar="images/avatar/cook6.png" style={{padding: '0px',float: 'right', width: '40px', margin: '2px 2px 0',}}/>
-                <CardTitle style={{padding: '4px', borderBottom: 'solid 0.2px #dce0e3',}} title={cardTitle}
+                <CardHeader avatar={host.avatar} style={{padding: '0px',float: 'right', width: '40px', margin: '2px 2px 0',}}/>
+                <CardTitle style={{padding: '4px', borderBottom: 'solid 0.2px #dce0e3',}} title={title}
                            titleStyle={{fontSize: '17px'}}/>
                 <CardText>
-                    Water, Water and Water
+                    {description}
                 </CardText>
             </Card>
         )
