@@ -5,7 +5,7 @@
     "description": "A sample Apache Cordova application that responds to the deviceready event.",
     "main": "index.js",
     "scripts": {
-        "start": "yarn clean-dist && webpack && webpack-dev-server --inline --hot --port 8088",
+        "start": "webpack && webpack-dev-server --inline --hot --port 8088",
         "bundle": "webpack",
         "clean-dist": "rm -rf public",
         "server": "webpack-dev-server --inline --hot"
@@ -47,8 +47,7 @@
         "style-loader": "^0.13.1",
         "webpack": "^1.14.0",
         "webpack-dev-server": "^1.16.2",
-        "webpack-stream": "^3.2.0",
-
+        "webpack-stream": "^3.2.0"
     },
     "cordova": {
         "plugins": {

@@ -29,13 +29,6 @@ const config = {
                 loader: extractCSS.extract(['css?minimize&modules&importLoaders=2&localIdentName=[name]__[local]', 'postcss', 'sass']),
             },
             {
-                test: /\.(jpe?g|png|gif|svg)$/i,
-                loaders: [
-                    `file?hash=sha512&digest=hex&name=./images/[name]${hash_fingerprint}.[ext]`,
-                    'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
-                ]
-            },
-            {
                 test: require.resolve('snapsvg'),
                 loader: 'imports-loader?this=>window,fix=>module.exports=0'
             },
