@@ -1,6 +1,7 @@
 import React from "react"
 import moment from 'moment'
 import scss from "./Host.scss"
+import { hashHistory } from 'react-router'
 import modalGenerator from '../../../utils/ModelGenerator'
 import DataStorage from '../../../utils/Storage'
 import classNames from "classnames/bind"
@@ -101,6 +102,7 @@ class Host extends React.Component {
         )
         DataStorage.addActivity(activity)
         console.log(DataStorage.getActivities())
+        hashHistory.push('/')
     }
 
     validateData = () => {
