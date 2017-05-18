@@ -64,7 +64,7 @@ class DinningTable extends React.Component {
     const gap = 40;
     const ratio = 2 * Math.PI / seats_amount;
     let svg = Snap();
-    svg.attr('height', '500px').attr('width', '450px').attr('id', 'table');
+    svg.attr('height', '450px').attr('width', '450px').attr('id', 'table');
     let div_element = document.getElementById('dinning-table');
     svg.appendTo(div_element)
     let circle = svg.circle(x, y, radius);
