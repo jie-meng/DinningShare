@@ -69,7 +69,7 @@ class DinningTable extends React.Component {
     svg.appendTo(div_element)
     let circle = svg.circle(x, y, radius);
     circle.attr('fill', '#FFE082');
-    svg.image('www/images/food.png', x-100, y-100, 200, 200).attr('preserveAspectRatio', 'xMidYMin meet');
+    svg.image('images/food.png', x-100, y-100, 200, 200).attr('preserveAspectRatio', 'xMidYMin meet');
 
     let seats = this.state.seats;
     seats.forEach((seat, index) => {
@@ -77,26 +77,26 @@ class DinningTable extends React.Component {
       let y_temp = y - (radius + gap) * Math.sin(ratio * index);
       let seat_temp;
 
-      let sitting_image_not_avalaible = `www/images/sitting-silhouette_not_available_${this.rightOrLeft(index)}.svg`;
-      let sitting_image = `www/images/sitting-silhouette_${this.rightOrLeft(index)}.svg`;
+      let sitting_image_not_avalaible = `images/sitting-silhouette_not_available_${this.rightOrLeft(index)}.svg`;
+      let sitting_image = `images/sitting-silhouette_${this.rightOrLeft(index)}.svg`;
 
       switch (seat.status) {
         case 'taken':
-          seat_temp = svg.image('www/images/seat_not_available.svg', x_temp-25, y_temp-25, 50, 50).attr('preserveAspectRatio', 'xMidYMin meet');
+          seat_temp = svg.image('images/seat_not_available.svg', x_temp-25, y_temp-25, 50, 50).attr('preserveAspectRatio', 'xMidYMin meet');
           svg.image(sitting_image_not_avalaible, x_temp-38, y_temp-78, 80, 80).attr('preserveAspectRatio', 'xMidYMin meet');
           break;
         case 'available_temp':
-          seat_temp = svg.image('www/images/seat.svg', x_temp-25, y_temp-25, 50, 50).attr('preserveAspectRatio', 'xMidYMin meet');
+          seat_temp = svg.image('images/seat.svg', x_temp-25, y_temp-25, 50, 50).attr('preserveAspectRatio', 'xMidYMin meet');
           seat_temp.node.onclick = () => {
             seats[index].status = 'unavailable_temp';
             this.setSeatUnavailable(index);
           };
           break;
         case 'unavailable':
-          seat_temp = svg.image('www/images/seat_not_available.svg', x_temp-25, y_temp-25, 50, 50).attr('preserveAspectRatio', 'xMidYMin meet');
+          seat_temp = svg.image('images/seat_not_available.svg', x_temp-25, y_temp-25, 50, 50).attr('preserveAspectRatio', 'xMidYMin meet');
           break;
         case 'unavailable_temp':
-          seat_temp = svg.image('www/images/seat.svg', x_temp-25, y_temp-25, 50, 50).attr('preserveAspectRatio', 'xMidYMin meet');
+          seat_temp = svg.image('images/seat.svg', x_temp-25, y_temp-25, 50, 50).attr('preserveAspectRatio', 'xMidYMin meet');
           svg.image(sitting_image, x_temp-38, y_temp-78, 80, 80).attr('preserveAspectRatio', 'xMidYMin meet');
           seat_temp.node.onclick = () => {
             seats[index].status = 'available_temp';
