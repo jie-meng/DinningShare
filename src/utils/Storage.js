@@ -14,9 +14,9 @@ const DataStorage = {
         return activities;
     },
 
-    addActivity: (title, host, description, images, limitation, location, time, guests) => {
+    addActivity: (activity) => {
         let activities = DataStorage.getActivities();
-        activities.push(ModelGenerator.generateActivity(title, host, description, images, limitation, location, time, guests));
+        activities.push(activity);
         window.localStorage.setItem(Storage.activities, JSON.stringify(activities));
     }
 };
