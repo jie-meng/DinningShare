@@ -16,7 +16,7 @@ class App extends React.Component {
         return (
             <MuiThemeProvider>
                 <div>
-                    <AppBar title="Share Dinning Table"
+                    <AppBar title="Share Dining Table"
                             iconClassNameRight="muidocs-icon-navigation-expand-more"/>
                     <p>{activity.title}</p>
                     <p>{util.format("Name: %s Gender: %s Age: %s", activity.host.name, activity.host.gender, activity.host.age)}</p>
