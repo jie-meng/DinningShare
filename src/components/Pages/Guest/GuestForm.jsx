@@ -69,7 +69,7 @@ class GuestForm extends React.Component {
           }
         </div>
         <div className={cx('button')}>
-          <RaisedButton onClick={this.handleClick} backgroundColor={ amber700 } buttonStyle={ { width: '100%', color: '#ffffff' } }>Join</RaisedButton>
+          <RaisedButton onClick={this.handleClick} backgroundColor={ amber700 } buttonStyle={ { width: '100%', color: '#ffffff' } } style={{ width:'100%' }}>Join</RaisedButton>
         </div>
       </div>
     )
