@@ -1,20 +1,20 @@
 import ModelGenerator from '../utils/ModelGenerator';
 
 //hosts
-const host0 = ModelGenerator.generateMember("Micheal", "male", 35, 13937653812, "images/avatar/cook0.png");
-const host1 = ModelGenerator.generateMember("Aris", "female", 25, 13937653812, "images/avatar/cook1.png");
-const host2 = ModelGenerator.generateMember("Lucy", "female", 28, 13937653812, "images/avatar/cook2.png");
-const host3 = ModelGenerator.generateMember("Kate", "female", 28, 13937653812, "images/avatar/cook3.png");
+const host0 = ModelGenerator.generateMember("Micheal", "male", 13937653812, "images/avatar/cook0.png");
+const host1 = ModelGenerator.generateMember("Aris", "female", 13937653812, "images/avatar/cook1.png");
+const host2 = ModelGenerator.generateMember("Lucy", "female", 13937653812, "images/avatar/cook2.png");
+const host3 = ModelGenerator.generateMember("Kate", "female", 13937653812, "images/avatar/cook3.png");
 
 //members
-const member0 = ModelGenerator.generateMember("Micheal", "male", 35, 13937653812);
-const member1 = ModelGenerator.generateMember("Aris", "female", 25, 13937653812);
-const member2 = ModelGenerator.generateMember("Lucy", "female", 28, 13937653812);
-const member3 = ModelGenerator.generateMember("Kate", "female", 28, 13937653812);
-const member4 = ModelGenerator.generateMember("Carl", "male", 35, 13937653812);
-const member5 = ModelGenerator.generateMember("Tom", "male", 25, 13937653812);
-const member6 = ModelGenerator.generateMember("Jim", "male", 40, 13937653812);
-const member7 = ModelGenerator.generateMember("God", "male", 999, 13937653812);
+const member0 = ModelGenerator.generateMember("Micheal", "male", 13937653812);
+const member1 = ModelGenerator.generateMember("Aris", "female", 13937653812);
+const member2 = ModelGenerator.generateMember("Lucy", "female", 13937653812);
+const member3 = ModelGenerator.generateMember("Kate", "female", 13937653812);
+const member4 = ModelGenerator.generateMember("Carl", "male", 13937653812);
+const member5 = ModelGenerator.generateMember("Tom", "male", 13937653812);
+const member6 = ModelGenerator.generateMember("Jim", "male", 13937653812);
+const member7 = ModelGenerator.generateMember("God", "male", 13937653812);
 
 //locations
 const location0 = ModelGenerator.generateLocation("Shaanxi", "Xi'an", "Tian gu eight street", "Huanpu", "E606");
