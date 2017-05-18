@@ -14,7 +14,7 @@ let DataStorage = {
 
     addActivity: (activity) => {
         let data = DataStorage.getActivities();
-        data.push(activity);
+        data.unshift(activity);
         DataStorage.saveActivities();
     },
 
