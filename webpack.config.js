@@ -44,6 +44,7 @@ const config = {
         }),
         extractCSS,
     ],
+    devtool: 'eval',
 };
 
 module.exports = config;
