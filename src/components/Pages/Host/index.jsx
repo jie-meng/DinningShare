@@ -1,6 +1,8 @@
 import React from "react"
+import moment from 'moment'
 import scss from "./Host.scss"
 import modalGenerator from '../../../utils/ModelGenerator'
+import DataStorage from '../../../utils/Storage'
 import classNames from "classnames/bind"
 import TextField from "material-ui/TextField"
 import SelectField from "material-ui/SelectField"
@@ -34,6 +36,7 @@ const materialStyles = {
         width: 256
     },
     radioButton: {
+        marginTop: 20,
         marginBottom: 16,
     }
 };
@@ -55,7 +58,8 @@ class Host extends React.Component {
             date: null,
             time: null,
             name: '',
-            phoneNumber: ''
+            tel: '',
+            gender: ''
         }
     }
 
@@ -80,7 +84,23 @@ class Host extends React.Component {
         if(!this.validateData()){
             return false
         }
-
+        const host = modalGenerator.generateMember(
+            this.state.name,
+            this.state.gender,
+            this.state.tel
+        )
+        const activity = modalGenerator.generateActivity(
+            this.state.title,
+            host,
+            this.state.description,
+            null,
+            this.state.guests,
+            this.state.location,
+            moment(this.state.date).format('YYYY MMM Do'),
+            moment(this.state.time).format('HH:mm')
+        )
+        DataStorage.addActivity(activity)
+        console.log(DataStorage.getActivities())
     }
 
     validateData = () => {
@@ -164,7 +184,11 @@ class Host extends React.Component {
                         name="name"
                         onChange={this.handleChange}
                     />
-                    <RadioButtonGroup name="gender" defaultSelected="not_light">
+                    <RadioButtonGroup
+                        name="gender"
+                        defaultSelected="not_light"
+                        onChange={this.handleChange}
+                    >
                         <RadioButton
                             value="male"
                             label="Male"
@@ -186,7 +210,7 @@ class Host extends React.Component {
                         floatingLabelStyle={materialStyles.floatingLabelStyle}
                         floatingLabelFocusStyle={materialStyles.floatingLabelFocusStyle}
                         underlineFocusStyle={materialStyles.underlineStyle}
-                        name="phoneNumber"
+                        name="tel"
                         onChange={this.handleChange}
                     />
                 </div>

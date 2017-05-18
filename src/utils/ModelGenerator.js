@@ -8,7 +8,7 @@ export default {
         }
     },
 
-    generateActivity: (title, host, description, images, limitation, location, time, guests) => {
+    generateActivity: (title, host, description, images, limitation, location, date, time, guests) => {
         return {
             "title": title,
             "host": host, //Object: member
@@ -16,7 +16,8 @@ export default {
             "images": images,
             "limitation": limitation,
             "location": location, //Object: location
-            "time": time, //Object: time
+            "date": date, //String: Date
+            "time": time, //String: time
             "guests": guests //Objects: member
         }
     }
