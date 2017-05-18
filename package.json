@@ -6,9 +6,7 @@
     "main": "index.js",
     "scripts": {
         "start": "yarn clean-dist && webpack && webpack-dev-server --inline --hot --port 8088",
-        "bundle": "webpack",
-        "clean-dist": "rm -rf public",
-        "server": "webpack-dev-server --inline --hot"
+        "build": "webpack && rm -rf platforms/android/assets && cordova run android"
     },
     "author": "Apache Cordova Team",
     "license": "Apache-2.0",
