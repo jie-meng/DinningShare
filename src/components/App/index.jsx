@@ -14,7 +14,7 @@ class App extends React.Component {
             <MuiThemeProvider>
                 <div>
                     <AppBar title="Share Dining Table"
-                            iconClassNameRight="muidocs-icon-navigation-expand-more"/>
+                            iconClassNameRight="muidocs-icon-navigation-expand-more" style={{backgroundColor: '#FFA000'}}/>
                     {this.props.children}
                 </div>
             </MuiThemeProvider>
