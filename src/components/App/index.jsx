@@ -7,13 +7,12 @@ const cx = classNames.bind(styles);
 
 class App extends React.Component {
     render(){
-
-        return (
-            <div>
-                <h2>Hello!</h2>
-                <DinningTable/>
-            </div>
-        )
+      return (
+        <div>
+          {this.props.children}
+            <DinningTable/>
+        </div>
+      )
     }
 }
 
