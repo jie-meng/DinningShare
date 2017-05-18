@@ -28,6 +28,10 @@ const config = {
                 test: /\.scss$/,
                 loader: extractCSS.extract(['css?minimize&modules&importLoaders=2&localIdentName=[name]__[local]', 'postcss', 'sass']),
             },
+            {
+                test: require.resolve('snapsvg'),
+                loader: 'imports-loader?this=>window,fix=>module.exports=0'
+            },
         ],
     },
     resolve: {
