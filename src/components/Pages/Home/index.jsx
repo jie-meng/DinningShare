@@ -11,9 +11,10 @@ class Home extends React.Component {
                     <CardMedia overlay={<CardTitle title="My Kitchen" style={{padding: '0px',}} titleStyle={{fontSize: '18px',paddingLeft: '10px'}}/>}>
                         <img src="www/images/kitchen_chef1.jpg" style={{height: '210px',}}/>
                     </CardMedia>
+                    <CardHeader avatar="www/images/chef1.png" style={{padding: '0px',float: 'right', width: '40px', margin: '2px 2px 0',}}/>
                     <CardTitle style={{padding: '4px', borderBottom: '0.2px solid grey',}} title="Dinner"
                                titleStyle={{fontSize: '17px'}}/>
-                    <CardHeader avatar="www/images/chef1.png" style={{padding: '0px'}}/>
+
                     <CardText>
                         Water, Water and Water
                     </CardText>
