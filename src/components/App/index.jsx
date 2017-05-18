@@ -7,10 +7,11 @@ const cx = classNames.bind(styles);
 
 class App extends React.Component {
     render(){
+      let guests = []
       return (
         <div>
           {this.props.children}
-            <DinningTable/>
+            <DinningTable guests={ guests } limitation={ 5 }/>
         </div>
       )
     }
