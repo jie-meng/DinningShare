@@ -98,7 +98,8 @@ class Host extends React.Component {
             this.state.guests,
             this.state.location,
             moment(this.state.date).format('YYYY MMM Do'),
-            moment(this.state.time).format('HH:mm')
+            moment(this.state.time).format('HH:mm'),
+            []
         )
         DataStorage.addActivity(activity)
         hashHistory.push('/')
