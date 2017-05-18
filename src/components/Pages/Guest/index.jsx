@@ -22,9 +22,12 @@ class Guest extends React.Component {
       return activity.title === title;
     })[0];
     const { guests, limitation, images, description, location, time } = activity;
+
+    let image = images ? images[0] : 'images/food/pie.png';
+
     return (
       <div>
-        <img style={{width: '100%'}} src={ images[0] } alt=""/>
+        <img style={{width: '100%'}} src={ image } alt=""/>
         <div className={ cx('dinner-info') }>
           <span>
             <img src="images/cutlery.svg" alt=""/>
