@@ -10,15 +10,15 @@ class DinningTable extends React.Component {
 
   static PropTypes = {
     limitation: React.PropTypes.number,
-    guests: React.PropTypes.Array
+    guests: React.PropTypes.Array,
+    setIsSeatSelected: React.PropTypes.func
   }
 
   constructor(props) {
     super(props);
     this.state = {
-      seats: this.initialState(props)
+      seats: this.initialState(props),
     }
-    console.log(this.initialState(props))
   }
 
   componentDidMount () {
@@ -124,13 +124,16 @@ class DinningTable extends React.Component {
     this.setState({
       seats: seats
     })
+    this.props.setIsSeatSelected && this.props.setIsSeatSelected(true);
   }
   setSeatAvailable = (index) => {
     let seats = this.state.seats;
     seats[index].status = 'available_temp';
     this.setState({
-      seats: seats
-    })
+      seats: seats,
+    });
+    this.props.setIsSeatSelected && this.props.setIsSeatSelected(false);
+
   }
 }
 

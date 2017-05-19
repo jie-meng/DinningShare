@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './Home.scss'
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
+import { amber700 } from "material-ui/styles/colors"
 import { hashHistory } from 'react-router'
 import FloatingActionButton from 'material-ui/FloatingActionButton';
 import ContentAdd from 'material-ui/svg-icons/content/add';
@@ -19,7 +20,7 @@ class Home extends React.Component {
         return (
             <div>
                 {cardItems}
-                <FloatingActionButton style={{position: 'fixed', bottom: '8px', right: '8px'}} iconStyle={{backgroundColor: '#FFA000'}} onClick={() => {hashHistory.push({pathname: '/host'}) }}>
+                <FloatingActionButton style={{position: 'fixed', bottom: '20px', right: '20px'}} iconStyle={{backgroundColor: amber700, height: '60px', width: '60px'}} onClick={() => {hashHistory.push({pathname: '/host'}) }}>
                     <ContentAdd />
                 </FloatingActionButton>
             </div>

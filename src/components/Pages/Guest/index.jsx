@@ -13,9 +13,16 @@ class Guest extends React.Component {
     title: React.PropTypes.string
   }
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      isSeatSelected: false
+    }
+  }
+
   render(){
-    console.log(this.props);
     const title = this.props.location.query.title;
+    const isSeatSelected = this.state.isSeatSelected;
     // const title = 'Great Dinner';
     const activities = Storage.getActivities();
     let activity = activities.filter((activity) => {
@@ -42,8 +49,8 @@ class Guest extends React.Component {
             { time }
           </span>
         </div>
-        <DinningTable guests={ guests } limitation={ limitation }/>
-        <GuestForm addMember={ this.addMember }/>
+        <DinningTable guests={ guests } limitation={ limitation } setIsSeatSelected={ this.setIsSeatSelected }/>
+        <GuestForm addMember={ this.addMember } isSeatSelected={ isSeatSelected }/>
       </div>
     )
   }
@@ -56,6 +63,12 @@ class Guest extends React.Component {
     activities[index].guests.push(member);
     Storage.saveActivities();
     hashHistory.push({pathname: '/'});
+  }
+
+  setIsSeatSelected = (seatSelected) => {
+    this.setState({
+      isSeatSelected: seatSelected
+    });
   }
 }
 
