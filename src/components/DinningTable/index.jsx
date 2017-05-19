@@ -88,7 +88,6 @@ class DinningTable extends React.Component {
         case 'available_temp':
           seat_temp = svg.image('images/seat.svg', x_temp-25, y_temp-25, 50, 50).attr('preserveAspectRatio', 'xMidYMin meet');
           seat_temp.node.onclick = () => {
-            seats[index].status = 'unavailable_temp';
             this.setSeatUnavailable(index);
           };
           break;
@@ -99,7 +98,6 @@ class DinningTable extends React.Component {
           seat_temp = svg.image('images/seat.svg', x_temp-25, y_temp-25, 50, 50).attr('preserveAspectRatio', 'xMidYMin meet');
           svg.image(sitting_image, x_temp-38, y_temp-78, 80, 80).attr('preserveAspectRatio', 'xMidYMin meet');
           seat_temp.node.onclick = () => {
-            seats[index].status = 'available_temp';
             this.setSeatAvailable(index);
           };
           break;
@@ -115,7 +113,13 @@ class DinningTable extends React.Component {
   }
 
   setSeatUnavailable = (index) => {
-    let seats = this.state.seats;
+    let seats = JSON.parse(JSON.stringify(this.state.seats));
+    let index_temp = seats.findIndex((seat) => {
+      return seat.status === 'unavailable_temp';
+    });
+    if(index_temp > -1) {
+      seats[index_temp].status = 'available_temp';
+    }
     seats[index].status = 'unavailable_temp';
     this.setState({
       seats: seats
