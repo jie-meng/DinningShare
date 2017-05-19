@@ -17,18 +17,26 @@ const materialStyles = {
   }
 };
 
+const formFields = ['Name', 'Age', 'Gender', 'Phone'];
+
 class GuestForm extends React.Component {
 
   static PropTypes = {
-    addMember: React.PropTypes.func
+    addMember: React.PropTypes.func,
+    isSeatSelected: React.PropTypes.bool
   }
 
   constructor(props) {
     super(props);
+    this.state = {
+      isFormFilled: false
+    }
   }
 
+
   render(){
-    const formFields = ['Name', 'Age', 'Gender', 'Phone'];
+    const { isSeatSelected } = this.props;
+    const {isFormFilled} = this.state;
 
     return (
       <div className={ cx('container') }>
@@ -47,7 +55,7 @@ class GuestForm extends React.Component {
                 )
               } else {
                 return (
-                  <RadioButtonGroup name="gender" defaultSelected="not_light" onChange={this.handleChange} style={{ marginTop: '30px'}}>
+                  <RadioButtonGroup name="gender" defaultSelected="not_light" onChange={this.handleTextChange(field)} style={{ marginTop: '30px'}}>
                     <RadioButton
                       value="male"
                       label="Male"
@@ -69,7 +77,7 @@ class GuestForm extends React.Component {
           }
         </div>
         <div className={cx('button')}>
-          <RaisedButton onClick={this.handleClick} backgroundColor={ amber700 } buttonStyle={ { width: '100%', color: '#ffffff' } } style={{ width:'100%' }}>Join</RaisedButton>
+          <RaisedButton onClick={this.handleClick} disabled={ !(isSeatSelected && isFormFilled) } backgroundColor={ amber700 } buttonStyle={ { width: '100%', color: '#ffffff' } } style={{ width:'100%' }}>Join</RaisedButton>
         </div>
       </div>
     )
@@ -80,12 +88,28 @@ class GuestForm extends React.Component {
     this.props.addMember && this.props.addMember(this.state);
   }
 
+  checkForm = (field_on_change, newVal) => {
+    let isFormFilled = true;
+    formFields.forEach((field) => {
+      if(this.state[field] == undefined || this.state[field] == '') {
+        if(field_on_change !== field) {
+          isFormFilled = false;
+        }
+      }
+    });
+    this.setState({
+      isFormFilled: isFormFilled && newVal
+    })
+  }
 
-  handleTextChange = (field) => {
+
+  handleTextChange = (field, newVal) => {
     return (event, newVal) => {
       this.setState({
         [field]: newVal
-      })
+      });
+      this.checkForm(field, newVal);
+      console.log(this.state)
     }
   }
 
