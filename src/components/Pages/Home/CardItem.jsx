@@ -6,8 +6,11 @@ class CardItem extends React.Component {
     render() {
         const { title, description, images, host } = this.props.activity;
         let image = images ? images[0] : 'images/food/pie.png';
-        let avatar = host.avatar || 'images/avatar/cook0.png';
-
+        let avatar = host.avatar 
+        if (!avatar) {
+            avatar = host.gender == 'male' ? 'images/avatar/cook1.png' : 'images/avatar/cook0.png';
+        }
+        
         return (
             <Card style={{boxShadow: '0 2px 4px rgba(0,0,0,.15)', width: '48%', display:'inline-block', margin: '3px'}}
                   onClick={() => {hashHistory.push({pathname: '/guest',query: {title}}) }}>
