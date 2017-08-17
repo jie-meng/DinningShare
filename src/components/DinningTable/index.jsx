@@ -82,8 +82,8 @@ class DinningTable extends React.Component {
 
       switch (seat.status) {
         case 'taken':
+          svg.image(sitting_image_not_avalaible, x_temp-38, y_temp-82, 80, 80).attr('preserveAspectRatio', 'xMidYMin meet');
           seat_temp = svg.image('images/seat_not_available.svg', x_temp-25, y_temp-25, 50, 50).attr('preserveAspectRatio', 'xMidYMin meet');
-          svg.image(sitting_image_not_avalaible, x_temp-38, y_temp-78, 80, 80).attr('preserveAspectRatio', 'xMidYMin meet');
           break;
         case 'available_temp':
           seat_temp = svg.image('images/seat.svg', x_temp-25, y_temp-25, 50, 50).attr('preserveAspectRatio', 'xMidYMin meet');
@@ -95,8 +95,8 @@ class DinningTable extends React.Component {
           seat_temp = svg.image('images/seat_not_available.svg', x_temp-25, y_temp-25, 50, 50).attr('preserveAspectRatio', 'xMidYMin meet');
           break;
         case 'unavailable_temp':
+          svg.image(sitting_image, x_temp-38, y_temp-82, 80, 80).attr('preserveAspectRatio', 'xMidYMin meet');
           seat_temp = svg.image('images/seat.svg', x_temp-25, y_temp-25, 50, 50).attr('preserveAspectRatio', 'xMidYMin meet');
-          svg.image(sitting_image, x_temp-38, y_temp-78, 80, 80).attr('preserveAspectRatio', 'xMidYMin meet');
           seat_temp.node.onclick = () => {
             this.setSeatAvailable(index);
           };

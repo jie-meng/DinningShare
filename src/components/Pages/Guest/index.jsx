@@ -50,6 +50,10 @@ class Guest extends React.Component {
           </span>
         </div>
         <DinningTable guests={ guests } limitation={ limitation } setIsSeatSelected={ this.setIsSeatSelected }/>
+        <div className={ cx('table-info') }>
+          <img src="images/seat.svg" alt=""/>
+          <span>seats available</span>
+        </div>
         <GuestForm addMember={ this.addMember } isSeatSelected={ isSeatSelected }/>
       </div>
     )

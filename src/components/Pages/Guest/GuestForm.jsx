@@ -46,6 +46,7 @@ class GuestForm extends React.Component {
               if(field !== 'Gender') {
                 return (
                   <TextField floatingLabelText={ field }
+                             type={ field!== 'Name'? 'number':'text' }
                              floatingLabelStyle={{ color: amber700 }}
                              floatingLabelFocusStyle={ {color: amber700} }
                              underlineFocusStyle={{ borderColor: amber700 }}
@@ -109,7 +110,6 @@ class GuestForm extends React.Component {
         [field]: newVal
       });
       this.checkForm(field, newVal);
-      console.log(this.state)
     }
   }
 
